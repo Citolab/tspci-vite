@@ -1,6 +1,6 @@
 # `tspci vite`
 
-<h3 align="center">Get started creating pcis with vite</h3>
+<h3 align="center">A vite only pci builder</h3>
 
 ## Getting Started
 
