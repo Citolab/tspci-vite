@@ -1,15 +1,44 @@
-# `create-preact`
+# `tspci vite`
 
-<h2 align="center">
-  <img height="256" width="256" src="./src/assets/preact.svg">
-</h2>
-
-<h3 align="center">Get started using Preact and Vite!</h3>
+<h3 align="center">Get started creating pcis with vite</h3>
 
 ## Getting Started
 
 -   `npm run dev` - Starts a dev server at http://localhost:5173/
 
--   `npm run build` - Builds for production, emitting to `dist/`
+-   `npm run build` - Watch rollup build for PCIS
 
--   `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally
+This is a modified default Vite preact project.
+
+
+Added this to the vite.config.ts
+
+_vite.config.ts_
+```ts
+  build: {
+    copyPublicDir: false,
+    lib: {
+      name:"pci",
+      entry: resolve(__dirname, 'src/index.tsx'),
+      formats: ['umd']
+    },
+    rollupOptions: {
+      external:"qtiCustomInteractionContext",
+      output: {
+        entryFileNames: "index.js",
+        dir: "public"
+      }
+    },
+  },
+```
+
+You have to run both
+ - `npm run dev` for the test environment
+ - `npm run build` - for the modified rollup UMD build
+
+ copied the test template index.html into this project to test the build
+
+ the PCI is continously build with rollup and placed in the `public` folder.
+ `index.js`
+
+ No need to kick a final build, just copy this version.
