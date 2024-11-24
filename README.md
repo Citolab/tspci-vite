@@ -33,7 +33,7 @@ _vite.config.ts_
 ```
 
 You have to run both
- - `npm run dev` for the test environment
+ - `npm run dev` or `npm start` - for the develop environment
  - `npm run build` - for the modified rollup UMD build
 
  copied the test template index.html into this project to test the build
